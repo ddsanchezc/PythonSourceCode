@@ -1,6 +1,6 @@
 def PanPrimo(n):
-    temp=str(n) #Aqui convierto el numero en un string (para que pueda buscar el caracter después
-    respuestaPD=False #inicializo la variable respuestaPD
+    temp=str(n)
+    respuestaPD=False
 
     #BUSCADORES
     Cero=temp.find(str(0)) #cuando el numero no se encuentre esta funcion retorna un (-1)
@@ -81,7 +81,7 @@ def PanPrimo(n):
     #una vez comprobado que el numero es pandigital
     if respuestaPD==True:
         # Encontrando las 3 ultimas cifras
-        TresUCifras = temp[len(temp) - 3:len(temp) + 1] #la funcion len() me bota la longitud de caracteres de la variable temp
+        TresUCifras = temp[len(temp) - 3:len(temp) + 1]
 
         # Saber si las 3 ultimas conforman un numero primo
         contador = 0
