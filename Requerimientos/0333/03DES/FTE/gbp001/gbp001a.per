@@ -1,0 +1,50 @@
+{gbp001a.per.   Parametros diarios}                                            
+DATABASE tbsfi                                                                 
+SCREEN                                                                         
+{                                                                              
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                ฑฑฑฑฑฑ                                 ฑฑฑฑฑฑ                บ
+บฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ                                 ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑบ
+บฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ                                                                             บ
+บ                                                                             บ
+บ                                                                             บ
+บ                        Fecha anterior : [f1        ]                        บ
+บ                        Fecha actual   : [f5        ]                        บ
+บ                                                                             บ
+บ                        Sens. Cambiaria: [f9    ]                            บ
+บ                                                                             บ
+บ                          Oficial      Compra      Venta         UFV         บ
+บ                          ฤฤฤฤฤฤฤฤฤฤ  ฤฤฤฤฤฤฤฤฤฤ  ฤฤฤฤฤฤฤฤฤฤ  ฤฤฤฤฤฤฤฤฤฤ     บ
+บ       Cambio anterior :  [f2      ]  [f3      ]  [f4      ]  [f10     ]     บ
+บ       Cambio actual   :  [f6      ]  [f7      ]  [f8      ]  [f11     ]     บ
+บ                                                                             บ
+บ                                                                             บ
+บ                                                                             บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+}                                                                              
+END                                                                            
+                                                                               
+TABLES                                                                         
+     gbpmt                                                                     
+                                                                               
+ATTRIBUTES                                                                     
+f1 = FORMONLY.g_fdia TYPE DATE, NOENTRY,FORMAT="dd/mm/yyyy";                   
+f2 = FORMONLY.g_tcof TYPE DEC(7,5),FORMAT="#&.&&&&&",NOENTRY;
+f3 = FORMONLY.g_tcco TYPE DEC(7,5),FORMAT="#&.&&&&&",NOENTRY;
+f4 = FORMONLY.g_tcve TYPE DEC(7,5),FORMAT="#&.&&&&&",NOENTRY;
+f10= FORMONLY.g_tufv TYPE DEC(7,5),FORMAT="#&.&&&&&",NOENTRY;
+
+--f20 = FORMONLY.new_fech TYPE DATE, REVERSE, FORMAT="dd/mm/yyyy",NOENTRY;
+--f20 = FORMONLY.new_fech TYPE DATE, REVERSE, FORMAT="dd/mm/yyyy"; -- QUITAR no entry para restaurr 
+
+f5 = gbpmt.gbpmtfdia, REVERSE, FORMAT="dd/mm/yyyy",NOENTRY;                    
+f6 = gbpmt.gbpmttcof, REVERSE, FORMAT="#&.&&&&&";
+f7 = gbpmt.gbpmttcco, REVERSE, FORMAT="#&.&&&&&";
+f8 = gbpmt.gbpmttcve, REVERSE, FORMAT="#&.&&&&&";
+f9 = gbpmt.gbpmtscam, REVERSE, FORMAT = "##&.&&";                              
+f11= gbpmt.gbpmttufv, REVERSE, FORMAT = "#&.&&&&&";                            
+END                                                                            
+                                                                               
+INSTRUCTIONS                                                                   
+    DELIMITERS " "                                                             

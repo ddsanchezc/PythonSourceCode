@@ -1,0 +1,47 @@
+{ef355a  Inventario Fisico de Incautados}
+DATABASE formonly
+SCREEN
+{
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                ฑฑฑฑฑฑ                                 ฑฑฑฑฑฑ                บ
+บฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ                                 ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฺฤฤฤฤฤฤฤฤฤ  OPCIONES  ฤฤฤฤฤฤฤฤฤฤฟฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ  DATOS ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟบ
+บณ                               ณณ                                          ณบ
+บณ                               ณณ       A Fecha : [f1        ]             ณบ
+บณ                               ณณ                                          ณบ
+บณ[a] [d1                       ]ณณ  Ordenado  por:[x] (1) Nr. Registro      ณบ
+บณ[b] [d2                       ]ณณ                    (2) Subgrupo de Art.  ณบ
+บณ[c] [d3                       ]ณณ                                          ณบ
+บณ[d] [d4                       ]ณณ     Detallado: [y] (S/N)                 ณบ
+บณ                               ณณ                                          ณบ
+บณ                               ณณ       Formato: [z] (1) Texto             ณบ
+บณ                               ณณ                    (2) Excel             ณบ
+บณ                               ณณ  [e                  ]                   ณบ
+บณ                               ณณ                       Desea Generar? [w] ณบ
+บภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+}
+END
+
+ATTRIBUTES
+  a  = FORMONLY.o1,	AUTONEXT;
+  d1 = FORMONLY.d1,	NOENTRY;
+  b  = FORMONLY.o2,	AUTONEXT;
+  d2 = FORMONLY.d2,	NOENTRY;
+  c  = FORMONLY.o3,	AUTONEXT;
+  d3 = FORMONLY.d3,	NOENTRY;
+  d  = FORMONLY.o4,	AUTONEXT;
+  d4 = FORMONLY.d4,	NOENTRY;
+  f1 = FORMONLY.fech	TYPE DATE,  FORMAT="dd/mm/yyyy",
+			REVERSE;
+  x  = FORMONLY.tipo	TYPE SMALLINT,  REVERSE, INCLUDE =(1,2);
+  y  = FORMONLY.deta	TYPE CHAR,  REVERSE, INCLUDE =(S,N); 
+  z  = FORMONLY.form	TYPE SMALLINT,  REVERSE, INCLUDE =(1,2); 
+  w  = FORMONLY.gene	TYPE CHAR,  REVERSE, INCLUDE =(S); 
+  e  = FORMONLY.cart,	REVERSE, NOENTRY;
+END
+
+INSTRUCTIONS
+   DELIMITERS " "

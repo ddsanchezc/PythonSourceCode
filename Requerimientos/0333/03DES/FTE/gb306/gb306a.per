@@ -1,0 +1,50 @@
+{gb306a  Parametros diarios}
+DATABASE tbase                                                                 
+SCREEN                                                                         
+{                                                                              
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                ฑฑฑฑฑ                                   ฑฑฑฑฑ                บ
+บฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ                                   ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                                                             บ
+บ                          Fecha Anterior:[d1        ]                        บ
+บ                          Fecha Actual  :[f1        ] [x]                    บ
+บ                                                                             บ
+บ                                                                             บ
+บ                          Oficial            Compra            Venta         บ
+บ                         ฤฤฤฤฤฤฤฤฤ         ฤฤฤฤฤฤฤฤฤ         ฤฤฤฤฤฤฤฤฤ       บ
+บ       Cambio Anterior:  [d2     ]         [d3     ]         [d4     ]       บ
+บ       Cambio Actual  :  [f2     ]         [f3     ]         [f4     ]       บ
+บ                                                                             บ
+บ       T/C para intercambio de divisas     [d5     ]         [d6     ]       บ
+บ                     nuevo T/C             [f5     ]         [f6     ]       บ
+บ                                    [g                                    ]  บ
+บ                                                                             บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ Ver. 2.0.1 อผ
+}                                                                              
+END                                                                            
+                                                                               
+TABLES                                                                         
+     gbpmt                                                                     
+                                                                               
+ATTRIBUTES                                                                     
+f1 = gbpmt.gbpmtfdia, REVERSE, FORMAT="dd/mm/yyyy",NOENTRY;
+f2 = gbpmt.gbpmttcof, REVERSE, FORMAT="###.###";
+f3 = gbpmt.gbpmttcco, REVERSE, FORMAT="###.###";
+f4 = gbpmt.gbpmttcve, REVERSE, FORMAT="###.###";
+f5 = FORMONLY.g_nccd  TYPE DECIMAL(7,3), REVERSE, FORMAT="###.###";
+f6 = FORMONLY.g_ncvd  TYPE DECIMAL(7,3), REVERSE, FORMAT="###.###"; 
+d1 = FORMONLY.fdia TYPE DATE,  FORMAT="dd/mm/yyyy";
+d2 = FORMONLY.tcof TYPE DECIMAL(7,3), FORMAT="###.###";
+d3 = FORMONLY.tcco TYPE DECIMAL(7,3), FORMAT="###.###";
+d4 = FORMONLY.tcve TYPE DECIMAL(7,3), FORMAT="###.###";
+d5 = FORMONLY.tccd TYPE DECIMAL(7,3), FORMAT="###.###";
+d6 = FORMONLY.tcvd TYPE DECIMAL(7,3), FORMAT="###.###";
+g  = FORMONLY.g_desc,	REVERSE;
+x  = FORMONLY.x,        INVISIBLE;
+
+END                                                                            
+                                                                               
+INSTRUCTIONS                                                                   
+     DELIMITERS " "
